@@ -9,7 +9,21 @@
     "phone": "9876543210",
     "ssn": "12345",
     "username":"Julie",
-    "password": "VLEJ123"
+    "password": "VLEJ123",
+    "confirmPassword":"VLEJ123"
+  },
+  "invalidUser": {
+    "firstName": "Invalid",
+    "lastName": "TV",
+    "address": "Bangalore",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "zipCode": "560001",
+    "phone": "9876543210",
+    "ssn": "12345",
+    "username":"Julie",
+    "password": "VLEJ123",
+    "confirmPassword":"VLEJ333"
   }
 
  

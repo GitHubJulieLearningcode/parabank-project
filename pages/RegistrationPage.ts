@@ -37,6 +37,7 @@ export class RegisterPage extends BasePage {
     this.confirmPassword = page.locator('input[name="repeatedPassword"]');
     this.registerButton = page.locator('input[value="Register"]');
     this.registrationSuccessMessage =page.getByText('Your account was created');
+   
     
   }
 async registerUser(user: any): Promise<void> {
@@ -50,18 +51,33 @@ await this.fill(this.phone, user.phone);
 await this.fill(this.ssn, user.ssn);
 await this.fill(this.username, user.username);
 await this.fill(this.password, user.password);
-await this.fill(this.confirmPassword, user.password);
+await this.fill(this.confirmPassword, user.confirmPassword);
 await this.click(this.registerButton);
 }
+
 async navigateToRegistration(): Promise<void> {
 await this.click(this.registrationLink);
 }
+
+async clickRegister(): Promise<void> {
+await this.click(this.registerButton);
+}
+
 async verifyRegistrationSuccessful(): Promise<void> {
 
     await expect(
         this.registrationSuccessMessage
     ).toBeVisible();
 
+}
+
+async verifyErrorMessage(errorMessage: string) {
+await expect(this.page.getByText(errorMessage)).toBeVisible();
+}
+async verifyRegistrationPageDisplayed(): Promise<void> {
+    await expect(
+        this.page.getByText('Signing up is easy!')
+    ).toBeVisible();
 }
 
 }

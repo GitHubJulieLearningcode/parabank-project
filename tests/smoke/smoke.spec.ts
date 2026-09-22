@@ -1,3 +1,8 @@
+/*
+* Smoke suite is maintained separately because the Login scenario depends on
+* the user created during Registration. In a real-world framework, tests should
+* be independent and use dedicated test data or pre-created accounts.
+*/
 import { test } from '@playwright/test';
 import { RegisterPage } from '../../pages/RegistrationPage';
 import { LoginPage } from '../../pages/LoginPage';
@@ -13,16 +18,16 @@ test.describe('ParaBank Smoke Suite', () => {
         mode: 'serial'
     });
 
-    test('TC001 - Valid Registration + Auto Login + Logout @smoke',
+    test('TC001 - Registration - Valid flow @smoke',
         async ({ page }) => {
 
-            const registrationPage = new RegisterPage(page);
-            const accountsPage = new AccountsOverviewPage(page);
+        const registrationPage = new RegisterPage(page);
+        const accountsPage = new AccountsOverviewPage(page);
 
-            const registrationData =
+        const registrationData =
                 TestData.getRegistrationData();
 
-            registeredUser = {
+        registeredUser = {
                 ...registrationData,
                 username: helper.generateUniqueUsername(
                     registrationData.username
@@ -46,7 +51,7 @@ test.describe('ParaBank Smoke Suite', () => {
         }
     );
 
-    test('TC002 - Valid Login + Logout @smoke',
+    test('TC002 - Login - Valid flow  @smoke',
         async ({ page }) => {
 
             const loginPage = new LoginPage(page);

@@ -8,5 +8,9 @@ export class TestData {
     static getRegistrationData() {
       return users.registration;
 }
+    static getInvalidUser()
+    {
+        return users.invalidUser;
+    }
 
 }
