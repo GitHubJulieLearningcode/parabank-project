@@ -1,0 +1,16 @@
+{
+  "registration": {
+    "firstName": "Julie",
+    "lastName": "TV",
+    "address": "Bangalore",
+    "city": "Bangalore",
+    "state": "Karnataka",
+    "zipCode": "560001",
+    "phone": "9876543210",
+    "ssn": "12345",
+    "username":"Julie",
+    "password": "VLEJ123"
+  }
+
+ 
+}
