@@ -12,6 +12,10 @@
     "password": "VLEJ123",
     "confirmPassword":"VLEJ123"
   },
+  "invalidLoginUser": {
+    "username": "invalidUser",
+    "password": "invalidPwd"
+},
   "invalidUser": {
     "firstName": "Invalid",
     "lastName": "TV",
@@ -24,7 +28,21 @@
     "username":"Julie",
     "password": "VLEJ123",
     "confirmPassword":"VLEJ333"
-  }
+  },
+  "specialCharacterUsers": [
+       {
+     "username": "@#$%^&*",
+     "password": "test123"
+       },
+       {
+       "username": "user<>?",
+       "password": "test123"
+       },
+       {
+      "username": "user!@#",
+      "password": "!@#$%^"
+       }
+]
 
  
 }
