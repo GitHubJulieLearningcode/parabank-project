@@ -18,6 +18,11 @@ async logout(): Promise<void> {
 await this.click(this.logoutLink);
 
 }
+async verifyAccountsOverviewVisible(): Promise<void> {
+  await expect(
+    this.page.getByRole('heading', { name: 'Accounts Overview' })
+  ).toBeVisible();
+}
 
 }
 
