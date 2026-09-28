@@ -40,20 +40,67 @@ export class RegisterPage extends BasePage {
    
     
   }
+// async registerUser(user: any): Promise<void> {
+// await this.fill(this.firstName, user.firstName);
+// await this.fill(this.lastName, user.lastName);
+// await this.fill(this.address, user.address);
+// await this.fill(this.city, user.city);
+// await this.fill(this.state, user.state);
+// await this.fill(this.zipCode, user.zipCode);
+// await this.fill(this.phone, user.phone);
+// await this.fill(this.ssn, user.ssn);
+
+// await this.fill(this.username, user.username);
+// console.log(
+// 'Username field value:',
+// await this.username.inputValue()
+// );
+// await this.fill(this.password, user.password);
+// await this.fill(this.confirmPassword, user.confirmPassword);
+// await this.click(this.registerButton);
+// }
 async registerUser(user: any): Promise<void> {
-await this.fill(this.firstName, user.firstName);
-await this.fill(this.lastName, user.lastName);
-await this.fill(this.address, user.address);
-await this.fill(this.city, user.city);
-await this.fill(this.state, user.state);
-await this.fill(this.zipCode, user.zipCode);
-await this.fill(this.phone, user.phone);
-await this.fill(this.ssn, user.ssn);
-await this.fill(this.username, user.username);
-await this.fill(this.password, user.password);
-await this.fill(this.confirmPassword, user.confirmPassword);
-await this.click(this.registerButton);
+  console.log('Filling firstName');
+  await this.fill(this.firstName, user.firstName);
+
+  console.log('Filling lastName');
+  await this.fill(this.lastName, user.lastName);
+
+  console.log('Filling address');
+  await this.fill(this.address, user.address);
+
+  console.log('Filling city');
+  await this.fill(this.city, user.city);
+
+  console.log('Filling state');
+  await this.fill(this.state, user.state);
+
+  console.log('Filling zipCode');
+  await this.fill(this.zipCode, user.zipCode);
+
+  console.log('Filling phone');
+  await this.fill(this.phone, user.phone);
+
+  console.log('Filling ssn');
+  await this.fill(this.ssn, user.ssn);
+
+  console.log('Filling username');
+  await this.fill(this.username, user.username);
+
+  console.log('Username value:',
+    await this.username.inputValue());
+
+  console.log('Filling password');
+  await this.fill(this.password, user.password);
+
+  console.log('Filling confirmPassword');
+  await this.fill(this.confirmPassword, user.confirmPassword);
+ 
+
+  console.log('Clicking Register');
+  await this.click(this.registerButton);
 }
+
 
 async navigateToRegistration(): Promise<void> {
 await this.click(this.registrationLink);

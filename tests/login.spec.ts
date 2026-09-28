@@ -184,5 +184,41 @@ test('TC018 - Login - Multi-session Behavior @regression', async ({ browser, pag
     await context1.close();
     await context2.close();
 });
+test('TC020 - Accounts Overview - Valid Flow @regression', async ({
+  page,
+}) => {
+
+  const accountsPage = new AccountsOverviewPage(page);
+  const user = await helper.createAndLogoutUser(page);
+
+  const loginPage = new LoginPage(page);
+
+  await loginPage.login(
+    user.username,
+    user.password
+  );
+
+  await accountsPage.verifyAccountsOverviewLoaded();
+});
+test('TC021 - Accounts Overview - Logout Functionality @regression', async ({
+  page,
+}) => {
+
+  const accountsPage = new AccountsOverviewPage(page);
+  const loginPage = new LoginPage(page);
+
+  const user = await helper.createAndLogoutUser(page);
+
+  await loginPage.login(
+    user.username,
+    user.password
+  );
+
+  await accountsPage.verifyAccountsOverviewLoaded();
+
+  await accountsPage.logout();
+
+  await loginPage.verifyLoginPageLoaded();
+});
 
 });
