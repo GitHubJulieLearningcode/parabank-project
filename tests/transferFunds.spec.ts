@@ -214,5 +214,95 @@ test('TC039 - Verify Transfer Success Message @regression', async () => {
     timeout: 30000
   });
 });
+
+
+test('TC089 - Verify Amount Field Is Enabled @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(
+    transferPage.amount
+  ).toBeEnabled();
+});
+
+test('TC090 - Verify From Account Dropdown Is Enabled @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(
+    transferPage.fromAccount
+  ).toBeEnabled();
+});
+
+test('TC091 - Verify To Account Dropdown Is Enabled @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(
+    transferPage.toAccount
+  ).toBeEnabled();
+});
+
+test('TC092 - Verify Transfer Button Is Enabled @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(
+    transferPage.transferButton
+  ).toBeEnabled();
+});
+
+test('TC093 - Verify Amount Field Is Empty By Default @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(
+    transferPage.amount
+  ).toHaveValue('');
+});
+
+
+
+
+test('TC094 - Verify Amount Field Accepts Decimal Values @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await transferPage.amount.fill('100.50');
+
+  await expect(
+    transferPage.amount
+  ).toHaveValue('100.50');
+});
+
+test('TC095 - Verify User Can Clear Amount Field @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await transferPage.amount.fill('100');
+
+  await transferPage.amount.clear();
+
+  await expect(
+    transferPage.amount
+  ).toHaveValue('');
+});
+
+test('TC096 - Verify Transfer Funds URL @regression', async ({ page }) => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(page)
+    .toHaveURL(/transfer\.htm/);
+});
+
+test('TC097 - Verify Amount Field Visible @regression', async () => {
+
+  await transferPage.navigateToTransferFunds();
+
+  await expect(
+    transferPage.amount
+  ).toBeVisible();
+});
   
 });

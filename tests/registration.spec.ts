@@ -14,6 +14,7 @@ test.describe('Registration Tests', () => {
     
 
 test.beforeEach(async ({ page }) => {
+  await page.context().clearCookies();
 await page.goto('/');
 });
 test('TC001 - Registration - Valid flow @smoke @regression', async ({
