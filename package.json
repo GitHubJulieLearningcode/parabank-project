@@ -13,6 +13,7 @@
     "@types/node": "^26.6.2"
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "csv-parser": "^3.2.1"
   }
 }

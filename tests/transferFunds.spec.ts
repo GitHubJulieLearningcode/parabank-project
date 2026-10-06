@@ -45,9 +45,8 @@ test.describe('Fund Transfers', () => {
       await transferPage.performValidTransfer();
 
       await transferPage.verifyTransferSuccessful();
-    }
+    }      
   );
-
   test(
     'TC032 - Verify Transfer Success Message',
     async () => {
