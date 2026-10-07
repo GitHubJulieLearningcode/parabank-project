@@ -17,7 +17,7 @@ test.beforeEach(async ({ page }) => {
   await page.context().clearCookies();
 await page.goto('/');
 });
-test('TC001 - Registration - Valid flow @smoke @regression', async ({
+test('TC-REG-001- Registration - Valid flow @smoke @regression', async ({
   page,
 }) => {
 
@@ -40,7 +40,7 @@ test('TC001 - Registration - Valid flow @smoke @regression', async ({
   await registrationPage.verifyRegistrationSuccessful();
 
 });
-test('TC002 - Registration Mandatory Field Validation @regression', async ({ page }) => {
+test('TC-REG-002- Registration Mandatory Field Validation @regression', async ({ page }) => {
  
   const registrationPage = new RegisterPage(page);
   await registrationPage.navigateToRegistration();
@@ -63,7 +63,7 @@ for (const error of errors) {
 }
 
 });
-test('TC003 - Registration - Invalid data handling-Password Mismatch @regression', async ({ page }) => {
+test('TC-REG-003- Registration - Invalid data handling-Password Mismatch @regression', async ({ page }) => {
  const registrationPage = new RegisterPage(page);
         const registrationData =
                 TestData.getInvalidUser();
@@ -82,7 +82,7 @@ test('TC003 - Registration - Invalid data handling-Password Mismatch @regression
             await registrationPage.verifyErrorMessage('Passwords did not match.');
 
 });
-test('TC004 - Registration - Duplicate Username @regression', async ({
+test('TC-REG-004 - Registration - Duplicate Username @regression', async ({
   page,
 }) => {
 
@@ -116,7 +116,7 @@ test('TC004 - Registration - Duplicate Username @regression', async ({
     'This username already exists.'
   );
 });
-test('TC005 - Registration - Refresh/Back Browser @regression', async ({
+test('TC-REG-005 - Registration - Refresh/Back Browser @regression', async ({
   page,
 }) => {
 
@@ -139,7 +139,7 @@ test('TC005 - Registration - Refresh/Back Browser @regression', async ({
 
   await registrationPage.verifyRegistrationPageDisplayed();
 });
-test('TC006 - Registration - Multi Session Behavior', async ({ browser }) => {
+test('TC-REG-006 - Registration - Multi Session Behavior', async ({ browser }) => {
 
   // Session 1
   const context1 = await browser.newContext();
@@ -176,7 +176,7 @@ test('TC006 - Registration - Multi Session Behavior', async ({ browser }) => {
   await context1.close();
   await context2.close();
 });
-test('TC007 - Registration - Data Persistence @regression', async ({
+test('TC-REG-007 - Registration - Data Persistence @regression', async ({
   page,
 }) => {
 
@@ -208,7 +208,7 @@ test('TC007 - Registration - Data Persistence @regression', async ({
   // Verify account overview
   await accountsPage.verifyAccountsOverviewVisible();
 });
-test('TC008 - Registration - End-to-End Integration @regression', async ({
+test('TC-REG-008 - Registration - End-to-End Integration @regression', async ({
   page,
 }) => {
 

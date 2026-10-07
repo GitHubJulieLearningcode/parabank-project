@@ -1,0 +1,17 @@
+Starting registration
+Generated Username: julieu9l
+Filling firstName
+Filling lastName
+Filling address
+Filling city
+Filling state
+Filling zipCode
+Filling phone
+Filling ssn
+Filling username
+Username value: julieu9l
+Filling password
+Filling confirmPassword
+Clicking Register
+Registration completed
+Login completed

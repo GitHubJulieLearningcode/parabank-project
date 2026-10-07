@@ -33,7 +33,7 @@ test.describe('Accounts & Balances', () => {
     await page.close();
   });
 
-  test('TC022 - Open CHECKING Account @smoke', async () => {
+  test('TC-OAC-001- Open CHECKING Account @smoke', async () => {
     await accountsPage.navigateToAccountsOverview();
 
     const balancesBefore =
@@ -60,7 +60,7 @@ test.describe('Accounts & Balances', () => {
 
   });
 
-  test('TC023 - Open SAVINGS Account @regression', async () => {
+  test('TC-OAC-002 - Open SAVINGS Account @regression', async () => {
     await openAccountPage.navigateToOpenAccount();
     await openAccountPage.openAccount('SAVINGS');
     await openAccountPage.verifyAccountCreated();
@@ -76,7 +76,7 @@ test.describe('Accounts & Balances', () => {
     );
   });
 
-  test('TC024 - Verify New Account ID Generated @regression', async () => {
+  test('TC-OAC-003 - Verify New Account ID Generated @regression', async () => {
     await openAccountPage.navigateToOpenAccount();
     await openAccountPage.openAccount('CHECKING');
 
@@ -87,7 +87,7 @@ test.describe('Accounts & Balances', () => {
     expect(accountId).toMatch(/^\d+$/);
   });
 
-  test('TC025 - Verify Account Appears In Overview @regression', async () => {
+  test('TC-OAC-004 - Verify Account Appears In Overview @regression', async () => {
     await openAccountPage.navigateToOpenAccount();
     await openAccountPage.openAccount('CHECKING');
 
@@ -101,7 +101,7 @@ test.describe('Accounts & Balances', () => {
     );
   });
 
-  test('TC026 - Verify Source Account Balance Reduced @regression', async () => {
+  test('TC-OAC-005 - Verify Source Account Balance Reduced @regression', async () => {
     await accountsPage.navigateToAccountsOverview();
 
     const sourceAccount =
@@ -125,7 +125,7 @@ test.describe('Accounts & Balances', () => {
     expect(balanceAfter).toBeLessThan(balanceBefore);
   });
 
-  test('TC027 - Open Two CHECKING Accounts @regression', async () => {
+  test('TC-OAC-006 - Open Two CHECKING Accounts @regression', async () => {
     const accountIds: string[] = [];
 
     for (let i = 0; i < 2; i++) {
@@ -147,7 +147,7 @@ test.describe('Accounts & Balances', () => {
     );
   });
 
-  test('TC028 - Open Two SAVINGS Accounts @regression', async () => {
+  test('TC-OAC-007 - Open Two SAVINGS Accounts @regression', async () => {
 const accountIds: string[] = [];
 for (let i = 0; i < 2; i++) {
 await openAccountPage.navigateToOpenAccount();
@@ -164,7 +164,7 @@ expect(accountIds[0]).not.toBe(
 accountIds[1]
 );
 });
-test('TC029 - Verify Multiple Accounts Visible @regression', async () => {
+test('TC-OAC-008 - Verify Multiple Accounts Visible @regression', async () => {
 const createdAccounts: string[] = [];
 for (let i = 0; i < 3; i++) {
 await openAccountPage.navigateToOpenAccount();
@@ -183,7 +183,7 @@ account
 );
 }
 });
-test('TC030 - Verify Account ID Uniqueness @regression', async () => {
+test('TC-OAC-009 - Verify Account ID Uniqueness @regression', async () => {
 await openAccountPage.navigateToOpenAccount();
 await openAccountPage.openAccount('CHECKING');
 const accountId1 =
@@ -196,7 +196,7 @@ expect(accountId1).toBeTruthy();
 expect(accountId2).toBeTruthy();
 expect(accountId1).not.toBe(accountId2);
 });
-test('TC51 - Open New Savings Account', async () => {
+test('TC-OAC-010 - Open New Savings Account', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -205,7 +205,7 @@ test('TC51 - Open New Savings Account', async () => {
   await openAccountPage.verifyAccountCreated();
 });
 
-test('TC52 - Open New Checking Account', async () => {
+test('TC-OAC-011 - Open New Checking Account', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -214,7 +214,7 @@ test('TC52 - Open New Checking Account', async () => {
   await openAccountPage.verifyAccountCreated();
 });
 
-test('TC53 - Verify New Account ID Is Generated', async () => {
+test('TC-OAC-012 - Verify New Account ID Is Generated', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -227,7 +227,7 @@ test('TC53 - Verify New Account ID Is Generated', async () => {
   expect(accountId).toMatch(/^\d+$/);
 });
 
-test('TC54 - Verify Account Type Dropdown Values', async () => {
+test('TC-OAC-013 - Verify Account Type Dropdown Values', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -242,7 +242,7 @@ test('TC54 - Verify Account Type Dropdown Values', async () => {
 
 
 
-test('TC55 - Create Two Savings Accounts Sequentially', async () => {
+test('TC-OAC-014 - Create Two Savings Accounts Sequentially', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -261,7 +261,7 @@ test('TC55 - Create Two Savings Accounts Sequentially', async () => {
   expect(firstAccount).not.toBe(secondAccount);
 });
 
-test('TC56 - Verify Account Numbers Are Unique', async () => {
+test('TC-OAC-015 - Verify Account Numbers Are Unique', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -280,7 +280,7 @@ test('TC56 - Verify Account Numbers Are Unique', async () => {
   expect(account1).not.toBe(account2);
 });
 
-test('TC57 - Open Savings Then Checking Account', async () => {
+test('TC-OAC-016 - Open Savings Then Checking Account', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -299,7 +299,7 @@ test('TC57 - Open Savings Then Checking Account', async () => {
   expect(savingsAccount).not.toBe(checkingAccount);
 });
 
-test('TC58 - Verify Newly Created Account Appears In Accounts Overview', async () => {
+test('TC-OAC-017 - Verify Newly Created Account Appears In Accounts Overview', async () => {
 
   await openAccountPage.navigateToOpenAccount();
 
@@ -315,7 +315,7 @@ test('TC58 - Verify Newly Created Account Appears In Accounts Overview', async (
   );
 });
 
-test('TC59 - Create Three Accounts In One Session', async () => {
+test('TC-OAC-018 - Create Three Accounts In One Session', async () => {
 
   const accountIds: string[] = [];
 

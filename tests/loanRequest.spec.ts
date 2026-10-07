@@ -42,7 +42,7 @@ test.describe('Loan Request Tests', () => {
     }
 
 });
-test('TC075 - Request Loan With Valid Details @smoke',
+test('TC-RLN-001 - Request Loan With Valid Details @smoke',
 async () => {
 
   await loanPage.applyLoan(
@@ -52,7 +52,7 @@ async () => {
 
   await loanPage.verifyLoanApproved();
 });
-test('TC076 - Verify Loan Account Visible In Overview',
+test('TC-RLN-002 - Verify Loan Account Visible In Overview',
 async () => {
 
   await loanPage.applyLoan(
@@ -64,7 +64,7 @@ async () => {
   await accountsPage.navigateToAccountsOverview();
   await accountsPage.verifyAccountsOverviewLoaded();
 });
-test('TC077 - Verify Loan Account Generated',
+test('TC-RLN-003 - Verify Loan Account Generated',
 async () => {
 
   await loanPage.applyLoan(
@@ -75,7 +75,7 @@ async () => {
   await loanPage
     .verifyLoanAccountGenerated();
 });
-test('TC078 - Apply Multiple Loans',
+test('TC-RLN-004 - Apply Multiple Loans',
 async () => {
 
   await loanPage.applyLoan(
@@ -97,7 +97,7 @@ async () => {
 
  
 });
-test('TC079 - Down Payment Exceeds Balance',
+test('TC-RLN-005 - Down Payment Exceeds Balance',
 async () => {
 
   await loanPage.applyLoan(
@@ -107,7 +107,7 @@ async () => {
 
   await loanPage.verifyLoanDenied();
 });
-test('TC080 - Blank Loan Amount',
+test('TC-RLN-006 - Blank Loan Amount',
 async () => {
 
   await loanPage.applyLoan(
@@ -115,7 +115,7 @@ async () => {
     '100'
   );
 });
-test('TC081 - Blank Down Payment',
+test('TC-RLN-007- Blank Down Payment',
 async () => {
 
   await loanPage.applyLoan(
@@ -123,7 +123,7 @@ async () => {
     ''
   );
 });
-test('TC082 - Loan Amount Zero',
+test('TC-RLN-008 - Loan Amount Zero',
 async () => {
 
   await loanPage.applyLoan(
@@ -131,7 +131,7 @@ async () => {
     '100'
   );
 });
-test('TC083 - Down Payment Zero',
+test('TC-RLN-009 - Down Payment Zero',
 async () => {
 
   await loanPage.applyLoan(
@@ -139,7 +139,7 @@ async () => {
     '0'
   );
 });
-test('TC084 - Negative Loan Amount',
+test('TC-RLN-010 - Negative Loan Amount',
 async () => {
 
   await loanPage.applyLoan(
@@ -147,7 +147,7 @@ async () => {
     '100'
   );
 });
-test('TC085 - Negative Down Payment',
+test('TC-RLN-011 - Negative Down Payment',
 async () => {
 
   await loanPage.applyLoan(
@@ -155,7 +155,7 @@ async () => {
     '-100'
   );
 });
-test('TC086 - Non Numeric Loan Amount',
+test('TC-RLN-012 - Non Numeric Loan Amount',
 async () => {
 
   await loanPage.applyLoan(
@@ -163,7 +163,7 @@ async () => {
     '100'
   );
 });
-test('TC087 - Non Numeric Down Payment',
+test('TC-RLN-013 - Non Numeric Down Payment',
 async () => {
 
   await loanPage.applyLoan(
@@ -171,7 +171,7 @@ async () => {
     'XYZ'
   );
 });
-test('TC088 - Down Payment Equals Loan Amount',
+test('TC-RLN-014 - Down Payment Equals Loan Amount',
 async () => {
 
   await loanPage.applyLoan(

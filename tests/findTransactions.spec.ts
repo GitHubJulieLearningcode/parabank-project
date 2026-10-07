@@ -45,14 +45,14 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     }
   });
 
-  test('TC060 - Search Transaction By ID @smoke', async () => {
+  test('TC-FTX-001 - Search Transaction By ID @smoke', async () => {
 
     await transactionPage.searchById('1');
 
     await transactionPage.verifyResultsDisplayed();
   });
 
-  test('TC061 - Search Transaction By Date @regression', async () => {
+  test('TC-FTX-002 - Search Transaction By Date @regression', async () => {
 
     await transactionPage.searchByDate(
       '09-28-2026'
@@ -61,7 +61,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyResultsDisplayed();
   });
 
-  test('TC062 - Search Transaction By Date Range @regression', async () => {
+  test('TC-FTX-003 - Search Transaction By Date Range @regression', async () => {
 
     await transactionPage.searchByDateRange(
       '09-01-2026',
@@ -71,14 +71,14 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyResultsDisplayed();
   });
 
-  test('TC063 - Search Transaction By Amount @regression', async () => {
+  test('TC-FTX-004 - Search Transaction By Amount @regression', async () => {
 
     await transactionPage.searchByAmount('100');
 
     await transactionPage.verifyResultsDisplayed();
   });
 
-  test('TC064 - Search Amount With No Results @regression', async () => {
+  test('TC-FTX-005 - Search Amount With No Results @regression', async () => {
 
     await transactionPage.searchByAmount(
       '99999999'
@@ -87,7 +87,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyNoResults();
   });
 
-  test('TC065 - Date Range Start Equals End @regression', async () => {
+  test('TC-FTX-006 - Date Range Start Equals End @regression', async () => {
 
     await transactionPage.searchByDateRange(
       '09-28-2026',
@@ -97,7 +97,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyResultsDisplayed();
   });
 
-  test('TC066 - End Date Less Than Start Date @regression', async () => {
+  test('TC-FTX-007 - End Date Less Than Start Date @regression', async () => {
 
     await transactionPage.searchByDateRange(
       '09-28-2026',
@@ -109,7 +109,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     ).toBeVisible();
   });
 
-  test('TC067 - Invalid Date Format @regression', async () => {
+  test('TC-FTX-008 - Invalid Date Format @regression', async () => {
 
     await transactionPage.searchByDate(
       'abcd'
@@ -120,7 +120,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     ).toBeVisible();
   });
 
-  test('TC068 - Future Date Search @regression', async () => {
+  test('TC009 - Future Date Search @regression', async () => {
 
     await transactionPage.searchByDate(
       '12-31-2099'
@@ -129,7 +129,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyNoResults();
   });
 
-  test('TC069 - Verify Find Transaction Page UI @regression', async () => {
+  test('TC-FTX-010 - Verify Find Transaction Page UI @regression', async () => {
 
     await expect(
       transactionPage.transactionId
@@ -144,7 +144,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     ).toBeVisible();
   });
 
-  test('TC070 - Search Invalid Transaction ID @regression', async () => {
+  test('TC-FTX-011 - Search Invalid Transaction ID @regression', async () => {
 
     await transactionPage.searchById(
       '999999999'
@@ -153,7 +153,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyNoResults();
   });
 
-  test('TC071 - Verify Multiple Transactions Returned @regression', async () => {
+  test('TC-FTX-012 - Verify Multiple Transactions Returned @regression', async () => {
 
     await transactionPage.searchByDateRange(
       '01-01-2020',
@@ -163,7 +163,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
        await transactionPage.verifyTransactionResultsDisplayed();
   });
 
-  test('TC072 - Verify Newest First Ordering @regression', async () => {
+  test('TC-FTX-013 - Verify Newest First Ordering @regression', async () => {
 
     await transactionPage.searchByDateRange(
       '01-01-2020',
@@ -173,7 +173,7 @@ test.describe('Transaction Search & Statement Reconciliation', () => {
     await transactionPage.verifyTransactionResultsDisplayed();
   });
 
-  test('TC073 - Reconcile Transaction Data Display @regression', async ({page}) => {
+  test('TC-FTX-014 - Reconcile Transaction Data Display @regression', async ({page}) => {
 
     const transferPage =
 new TransferFundsPage(page);
@@ -185,7 +185,7 @@ await transactionPage.verifyTransactionResultsDisplayed();
 
   });
 
-  test('TC074 - Execute Multiple Searches Sequentially @regression', async () => {
+  test('TC-FTX-015 - Execute Multiple Searches Sequentially @regression', async () => {
 
     await transactionPage.searchByAmount('10');
 

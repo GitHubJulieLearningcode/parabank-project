@@ -9,7 +9,7 @@ test.describe('Bill Payment Tests', () => {
      await helper.createAndLoginUser(page);
   });
 
-  test('TC40 - Pay bill with valid details', async ({ page }) => {
+  test('TC-BPY-001 - Pay bill with valid details', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -26,7 +26,7 @@ test.describe('Bill Payment Tests', () => {
     await billPay.verifySuccess();
   });
 
-  test('TC41 - Verify Payee Name is mandatory', async ({ page }) => {
+  test('TC-BPY-002 - Verify Payee Name is mandatory', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -43,7 +43,7 @@ test.describe('Bill Payment Tests', () => {
     await billPay.verifyPayeeNameMandatory();
   });
 
-  test('TC42 - Verify Account Number mismatch validation', async ({ page }) => {
+  test('TC-BPY-003 - Verify Account Number mismatch validation', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -56,7 +56,7 @@ test.describe('Bill Payment Tests', () => {
     await billPay.verifyAccountMismatchError();
   });
 
-  test('TC43 - Verify amount cannot be blank', async ({ page }) => {
+  test('TC-BPY-004 - Verify amount cannot be blank', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -73,7 +73,7 @@ test.describe('Bill Payment Tests', () => {
     await billPay.verifyAmountMandatory();
   });
 
-  test('TC44 - Pay same biller twice in one session', async ({ page }) => {
+  test('TC-BPY-005 - Pay same biller twice in one session', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -101,7 +101,7 @@ test.describe('Bill Payment Tests', () => {
 
     await billPay.verifySuccess();
   });
-  test('TC45 - Verify bill payment with minimum amount 0.01', async ({ page }) => {
+  test('TC-BPY-006 - Verify bill payment with minimum amount 0.01', async ({ page }) => {
 
   const billPay = new BillPayPage(page);
 
@@ -115,7 +115,7 @@ test.describe('Bill Payment Tests', () => {
 
   await billPay.verifySuccess();
 });
-test('TC46 - Verify bill payment with amount 0', async ({ page }) => {
+test('TC-BPY-007 - Verify bill payment with amount 0', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -128,7 +128,7 @@ test('TC46 - Verify bill payment with amount 0', async ({ page }) => {
     await billPay.verifyAmountValue('0');
 });
 
-test('TC47 - Verify bill payment with negative amount', async ({ page }) => {
+test('TC-BPY-008 - Verify bill payment with negative amount', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -141,7 +141,7 @@ test('TC47 - Verify bill payment with negative amount', async ({ page }) => {
     await billPay.verifyAmountValue('-10');
 });
 
-test('TC48 - Verify bill payment with very large amount', async ({ page }) => {
+test('TC-BPY-009 - Verify bill payment with very large amount', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -154,7 +154,7 @@ test('TC48 - Verify bill payment with very large amount', async ({ page }) => {
     await billPay.verifyAmountValue('99999999');
 });
 
-test('TC49 - Pay same biller twice in one session', async ({ page }) => {
+test('TC-BPY-010 - Pay same biller twice in one session', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 
@@ -163,7 +163,7 @@ test('TC49 - Pay same biller twice in one session', async ({ page }) => {
     await billPay.paySameBillerTwice();
 });
 
-test('TC50 - Pay multiple billers in one session', async ({ page }) => {
+test('TC-BPY-011 - Pay multiple billers in one session', async ({ page }) => {
 
     const billPay = new BillPayPage(page);
 

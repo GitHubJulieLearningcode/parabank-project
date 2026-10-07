@@ -37,7 +37,7 @@ test.describe('Fund Transfers', () => {
   // });
 
   test(
-    'TC031 - Transfer Funds Between Own Accounts @smoke',
+    'TC-TRF-001 - Transfer Funds Between Own Accounts @smoke',
     async () => {
 
       await transferPage.navigateToTransferFunds();
@@ -48,7 +48,7 @@ test.describe('Fund Transfers', () => {
     }      
   );
   test(
-    'TC032 - Verify Transfer Success Message',
+    ' TC-TRF-002 - Verify Transfer Success Message',
     async () => {
 
       await transferPage.navigateToTransferFunds();
@@ -64,7 +64,7 @@ test.describe('Fund Transfers', () => {
   );
 
   test(
-    'TC033 - Verify Source Account Balance Debited',
+    'TC-TRF-003 - Verify Source Account Balance Debited',
     async () => {
 
       await transferPage.navigateToTransferFunds();
@@ -110,7 +110,7 @@ test.describe('Fund Transfers', () => {
     }
     
   );
-  test('TC034 - Transfer Minimum Amount @regression', async () => {
+  test('TC-TRF-004 - Transfer Minimum Amount @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -122,7 +122,7 @@ test.describe('Fund Transfers', () => {
   expect(transferDetails.transferAmount)
     .toBe(1);
 });
-test('TC035 - Verify Amount Field Accepts Numbers @regression', async () => {
+test('TC-TRF-005 - Verify Amount Field Accepts Numbers @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -132,7 +132,7 @@ test('TC035 - Verify Amount Field Accepts Numbers @regression', async () => {
     transferPage.amount
   ).toHaveValue('500');
 });
-test('TC036 - Verify Amount Field Mandatory @regression', async () => {
+test('TC-TRF-006 - Verify Amount Field Mandatory @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -162,7 +162,7 @@ test('TC036 - Verify Amount Field Mandatory @regression', async () => {
     transferPage.successMessage
   ).not.toBeVisible();
 });
-test('TC037 - Verify Transfer Page UI @regression', async () => {
+test('TC-TRF-007 - Verify Transfer Page UI @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -182,7 +182,7 @@ test('TC037 - Verify Transfer Page UI @regression', async () => {
     transferPage.transferButton
   ).toBeVisible();
 });
-test('TC038 - Transfer Between Different Accounts @regression', async () => {
+test('TC-TRF-008 - Transfer Between Different Accounts @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -199,7 +199,7 @@ test('TC038 - Transfer Between Different Accounts @regression', async () => {
 
   await transferPage.verifyTransferSuccessful();
 });
-test('TC039 - Verify Transfer Success Message @regression', async () => {
+test('TC-TRF-009 - Verify Transfer Success Message @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -215,7 +215,7 @@ test('TC039 - Verify Transfer Success Message @regression', async () => {
 });
 
 
-test('TC089 - Verify Amount Field Is Enabled @regression', async () => {
+test('TC-TRF-010 - Verify Amount Field Is Enabled @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -224,7 +224,7 @@ test('TC089 - Verify Amount Field Is Enabled @regression', async () => {
   ).toBeEnabled();
 });
 
-test('TC090 - Verify From Account Dropdown Is Enabled @regression', async () => {
+test('TC-TRF-011 - Verify From Account Dropdown Is Enabled @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -233,7 +233,7 @@ test('TC090 - Verify From Account Dropdown Is Enabled @regression', async () => 
   ).toBeEnabled();
 });
 
-test('TC091 - Verify To Account Dropdown Is Enabled @regression', async () => {
+test('TC-TRF-012 - Verify To Account Dropdown Is Enabled @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -242,7 +242,7 @@ test('TC091 - Verify To Account Dropdown Is Enabled @regression', async () => {
   ).toBeEnabled();
 });
 
-test('TC092 - Verify Transfer Button Is Enabled @regression', async () => {
+test('TC-TRF-013 - Verify Transfer Button Is Enabled @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -251,7 +251,7 @@ test('TC092 - Verify Transfer Button Is Enabled @regression', async () => {
   ).toBeEnabled();
 });
 
-test('TC093 - Verify Amount Field Is Empty By Default @regression', async () => {
+test('TC-TRF-014 - Verify Amount Field Is Empty By Default @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -263,7 +263,7 @@ test('TC093 - Verify Amount Field Is Empty By Default @regression', async () => 
 
 
 
-test('TC094 - Verify Amount Field Accepts Decimal Values @regression', async () => {
+test('TC-TRF-015 - Verify Amount Field Accepts Decimal Values @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -274,7 +274,7 @@ test('TC094 - Verify Amount Field Accepts Decimal Values @regression', async () 
   ).toHaveValue('100.50');
 });
 
-test('TC095 - Verify User Can Clear Amount Field @regression', async () => {
+test('TC-TRF-016 - Verify User Can Clear Amount Field @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -287,7 +287,7 @@ test('TC095 - Verify User Can Clear Amount Field @regression', async () => {
   ).toHaveValue('');
 });
 
-test('TC096 - Verify Transfer Funds URL @regression', async ({ page }) => {
+test('TC-TRF-017 - Verify Transfer Funds URL @regression', async ({ page }) => {
 
   await transferPage.navigateToTransferFunds();
 
@@ -295,7 +295,7 @@ test('TC096 - Verify Transfer Funds URL @regression', async ({ page }) => {
     .toHaveURL(/transfer\.htm/);
 });
 
-test('TC097 - Verify Amount Field Visible @regression', async () => {
+test('TC-TRF-018- Verify Amount Field Visible @regression', async () => {
 
   await transferPage.navigateToTransferFunds();
 

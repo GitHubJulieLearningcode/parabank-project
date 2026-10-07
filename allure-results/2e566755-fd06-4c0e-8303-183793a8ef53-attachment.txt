@@ -1,0 +1,17 @@
+Starting registration
+Generated Username: julieafh
+Filling firstName
+Filling lastName
+Filling address
+Filling city
+Filling state
+Filling zipCode
+Filling phone
+Filling ssn
+Filling username
+Username value: julieafh
+Filling password
+Filling confirmPassword
+Clicking Register
+Registration completed
+Login completed

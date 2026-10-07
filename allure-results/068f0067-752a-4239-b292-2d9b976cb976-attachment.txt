@@ -1,0 +1,14 @@
+Generated Username: juliez5k
+Filling firstName
+Filling lastName
+Filling address
+Filling city
+Filling state
+Filling zipCode
+Filling phone
+Filling ssn
+Filling username
+Username value: juliez5k
+Filling password
+Filling confirmPassword
+Clicking Register

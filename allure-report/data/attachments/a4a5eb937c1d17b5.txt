@@ -1,0 +1,25 @@
+Starting registration
+Generated Username: juliei33
+Filling firstName
+Filling lastName
+Filling address
+Filling city
+Filling state
+Filling zipCode
+Filling phone
+Filling ssn
+Filling username
+Username value: juliei33
+Filling password
+Filling confirmPassword
+Clicking Register
+Logout skipped: locator.click: Test ended.
+Call log:
+  - waiting for getByRole('link', { name: 'Log Out' })
+
+    at AccountsOverviewPage.click (/Users/julie.tv/Desktop/parabank-project/pages/BasePage.ts:6:23)
+    at AccountsOverviewPage.logout (/Users/julie.tv/Desktop/parabank-project/pages/AccountsOverviewPage.ts:23:12)
+    at helper.logout (/Users/julie.tv/Desktop/parabank-project/utils/helper.ts:74:24)
+    at /Users/julie.tv/Desktop/parabank-project/tests/account.spec.ts:28:20 {
+  log: [ "  - waiting for getByRole('link', { name: 'Log Out' })" ]
+}

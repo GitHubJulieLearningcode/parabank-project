@@ -12,7 +12,7 @@ await page.goto('/');
 
 test.describe('Login Module', () => {
 
-    test('TC009 - Login - Valid Flow @smoke @regression', async ({ page }) => {
+    test('TC-LGN-001 - Login - Valid Flow @smoke @regression', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
     const accountsPage = new AccountsOverviewPage(page);
@@ -30,7 +30,7 @@ test.describe('Login Module', () => {
     await accountsPage.verifyAccountsOverviewLoaded();
 });
 
-    test('TC010 - Invalid Login @smoke @regression', async ({ page }) => {
+    test('TC-LGN-002 - Invalid Login @smoke @regression', async ({ page }) => {
 
         const loginPage = new LoginPage(page);
         const invalidUser = TestData.getInvalidLoginUser();
@@ -42,7 +42,7 @@ test.describe('Login Module', () => {
         await loginPage.verifyLoginFailed();
     });
 
-    test('TC011 - Blank Username @smoke @regression', async ({ page }) => {
+    test('TC-LGN-003 - Blank Username @smoke @regression', async ({ page }) => {
 
         const loginPage = new LoginPage(page);
 
@@ -56,7 +56,7 @@ test.describe('Login Module', () => {
         await loginPage.verifyLoginFailed();
     });
 
-    test('TC012 - Blank Password @smoke @regression', async ({ page }) => {
+    test('TC-LGN-004 - Blank Password @smoke @regression', async ({ page }) => {
 
         const loginPage = new LoginPage(page);
 
@@ -69,7 +69,7 @@ test.describe('Login Module', () => {
         await loginPage.verifyLoginFailed();
     });
 
-    test('TC013 - Blank Username And Password @smoke @regression', async ({ page }) => {
+    test('TC-LGN-005 - Blank Username And Password @smoke @regression', async ({ page }) => {
 
         const loginPage = new LoginPage(page);
 
@@ -80,7 +80,7 @@ test.describe('Login Module', () => {
 // Boundary Value Analysis is out of scope for ParaBank login functionality.
 // The application does not enforce or validate username/password length limits.
 // Therefore, boundary testing does not provide meaningful validation coverage here.
-    test('TC014 - Login - Boundary Value Check @regression', async ({ page }) => {
+    test('TC-LGN-006 - Login - Boundary Value Check @regression', async ({ page }) => {
             const loginPage = new LoginPage(page);
             const boundaryData = TestData.getLoginBoundaryData();
          await loginPage.login(
@@ -92,7 +92,7 @@ test.describe('Login Module', () => {
 // Special character validation is covered to verify application behavior.
 // ParaBank does not enforce explicit character restrictions on login fields,
 // therefore validation focuses on error handling and application stability.
-     test('TC015 - Login - Special Characters Validation @regression', async ({ page }) => {
+     test('TC-LGN-007 - Login - Special Characters Validation @regression', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
 
@@ -110,7 +110,7 @@ test.describe('Login Module', () => {
         await page.goto('/');
     }
 });
-    test('TC016 - Login - Duplicate Request/Data @regression', async ({ page }) => {
+    test('TC-LGN-008 - Login - Duplicate Request/Data @regression', async ({ page }) => {
 
     const loginPage = new LoginPage(page);
     const registrationPage = new RegisterPage(page);
@@ -130,7 +130,7 @@ test.describe('Login Module', () => {
 
     await accountsPage.verifyAccountsOverviewLoaded();
 });
-test('TC017 - Login - Refresh Browser @regression', async ({ page }) => {
+test('TC-LGN-009 - Login - Refresh Browser @regression', async ({ page }) => {
     const loginPage = new LoginPage(page);
     const accountsPage = new AccountsOverviewPage(page);
     const user = await helper.createAndLogoutUser(page);
@@ -144,7 +144,7 @@ test('TC017 - Login - Refresh Browser @regression', async ({ page }) => {
 });
 
 
-test('TC018 - Login - Multi-session Behavior @regression', async ({ browser, page }) => {
+test('TC-LGN-010 - Login - Multi-session Behavior @regression', async ({ browser, page }) => {
 
     // Create unique user and logout
     const user = await helper.createAndLogoutUser(page);
@@ -184,7 +184,7 @@ test('TC018 - Login - Multi-session Behavior @regression', async ({ browser, pag
     await context1.close();
     await context2.close();
 });
-test('TC020 - Accounts Overview - Valid Flow @regression', async ({
+test('TC-AOV-001 - Accounts Overview - Valid Flow @regression', async ({
   page,
 }) => {
 
@@ -200,7 +200,7 @@ test('TC020 - Accounts Overview - Valid Flow @regression', async ({
 
   await accountsPage.verifyAccountsOverviewLoaded();
 });
-test('TC021 - Accounts Overview - Logout Functionality @regression', async ({
+test('TC-AOV-002 - Accounts Overview - Logout Functionality @regression', async ({
   page,
 }) => {
 

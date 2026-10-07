@@ -1,0 +1,17 @@
+Starting registration
+Generated Username: julierdk
+Filling firstName
+Filling lastName
+Filling address
+Filling city
+Filling state
+Filling zipCode
+Filling phone
+Filling ssn
+Filling username
+Username value: julierdk
+Filling password
+Filling confirmPassword
+Clicking Register
+Registration completed
+Login completed

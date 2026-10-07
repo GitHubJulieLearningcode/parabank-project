@@ -1,0 +1,17 @@
+Starting registration
+Generated Username: juliex1q
+Filling firstName
+Filling lastName
+Filling address
+Filling city
+Filling state
+Filling zipCode
+Filling phone
+Filling ssn
+Filling username
+Username value: juliex1q
+Filling password
+Filling confirmPassword
+Clicking Register
+Registration completed
+Login completed

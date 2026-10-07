@@ -1,0 +1,1 @@
+{"attachments":[],"errors":[{"message":"afterEach hook failed: Test timeout of 30000ms exceeded while running \"afterEach\" hook.","trace":"Test timeout of 30000ms exceeded while running \"afterEach\" hook.\n    at /Users/julie.tv/Desktop/parabank-project/tests/account.spec.ts:26:8","timestamp":1791352851245}]}
